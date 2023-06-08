@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
+    <string name="x_game_result">X won the Game!</string>
+    <string name="o_game_result">O won the Game!</string>
+    <string name="draw_game_result">Tie Game!</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="reset_button_text">Reset</string>
+    <string name="button1_content_description">Button 1</string>
+    <string name="button2_content_description">Button 2</string>
+    <string name="button3_content_description">Button 3</string>
+    <string name="button4_content_description">Button 4</string>
+    <string name="button5_content_description">Button 5</string>
+    <string name="button6_content_description">Button 6</string>
+    <string name="button7_content_description">Button 7</string>
+    <string name="button8_content_description">Button 8</string>
+    <string name="button9_content_description">Button 9</string>
+
 </resources>

@@ -3,17 +3,19 @@ package com.example.tictactoe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var player = "p1"
+    private var player = "p1"
+    private var resetButton: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        resetButton = findViewById(R.id.resetButton)
         b1.setOnClickListener {
             buttonClick(b1)
         }
@@ -50,12 +52,12 @@ class MainActivity : AppCompatActivity() {
             buttonClick(b9)
         }
 
-        resetButton.setOnClickListener {
-
+        resetButton?.setOnClickListener {
+            reset()
         }
     }
 
-    fun buttonClick(btn: Button) {
+   private fun buttonClick(btn: Button) {
         if (b1.text == "") {
             if (player == "p1") {
                 player = "p2"
@@ -68,103 +70,107 @@ class MainActivity : AppCompatActivity() {
         win()
     }
 
-    fun win() {
+    private fun win() {
+
         if (b1.text == "X" && b2.text == "X" && b3.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
 
         if (b1.text == "O" && b2.text == "O" && b3.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
 
         if (b4.text == "X" && b5.text == "X" && b6.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
 
         if (b4.text == "O" && b5.text == "O" && b6.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
 
         if (b7.text == "X" && b8.text == "X" && b9.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
 
         if (b7.text == "O" && b8.text == "O" && b9.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         if (b1.text == "X" && b5.text == "X" && b9.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
         if (b1.text == "O" && b5.text == "O" && b9.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         if (b3.text == "X" && b5.text == "X" && b7.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
         if (b3.text == "O" && b5.text == "O" && b7.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         if (b1.text == "X" && b4.text == "X" && b7.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
         if (b1.text == "O" && b4.text == "O" && b7.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         if (b2.text == "X" && b5.text == "X" && b8.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
         if (b2.text == "O" && b5.text == "O" && b8.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         if (b3.text == "X" && b6.text == "X" && b9.text == "X") {
             toast("X won the Game!")
             disableButtons()
-            resultTV.text="X won the Game!"
+            resultTV.setText(R.string.x_game_result)
         }
         if (b3.text == "O" && b6.text == "O" && b9.text == "O") {
             toast("O won the Game!")
             disableButtons()
-            resultTV.text="O won the Game!"
+            resultTV.setText(R.string.o_game_result)
         }
         else{
             toast("Tie Game")
-            resultTV.text="Match Draw/Tie"
+            resultTV.setText(R.string.draw_game_result)
         }
     }
 
-    fun toast(msg: String) {
+
+   private fun toast(msg: String) {
         Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
     }
 
-    fun reset() {
+
+
+   private fun reset() {
         b1.text = ""
         b2.text = ""
         b3.text = ""
@@ -174,6 +180,12 @@ class MainActivity : AppCompatActivity() {
         b7.text = ""
         b8.text = ""
         b9.text = ""
+        enableButtons()
+        resultTV.text = ""
+        player = "p1"
+    }
+
+   private fun enableButtons() {
         b1.isEnabled = true
         b2.isEnabled = true
         b3.isEnabled = true
@@ -184,6 +196,8 @@ class MainActivity : AppCompatActivity() {
         b8.isEnabled = true
         b9.isEnabled = true
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -215,7 +229,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("onStop","Method Called")
     }
 
-    fun disableButtons() {
+   private fun disableButtons() {
         b1.isEnabled = false
         b2.isEnabled = false
         b3.isEnabled = false
