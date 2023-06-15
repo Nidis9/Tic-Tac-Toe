@@ -5,14 +5,23 @@
     <string name="draw_game_result">Tie Game!</string>
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="reset_button_text">Reset</string>
-    <string name="button1_content_description">Button 1</string>
-    <string name="button2_content_description">Button 2</string>
-    <string name="button3_content_description">Button 3</string>
-    <string name="button4_content_description">Button 4</string>
-    <string name="button5_content_description">Button 5</string>
-    <string name="button6_content_description">Button 6</string>
-    <string name="button7_content_description">Button 7</string>
-    <string name="button8_content_description">Button 8</string>
-    <string name="button9_content_description">Button 9</string>
+    <string name="button1">button1</string>
+    <string name="button2">button2</string>
+    <string name="button3">button3</string>
+    <string name="button4">button4</string>
+    <string name="button5">button5</string>
+    <string name="button6">button6</string>
+    <string name="button7">button7</string>
+    <string name="button8">button8</string>
+    <string name="button9">button9</string>
+    <string name="button1description">Button 1</string>
+    <string name="button2description">Button 2</string>
+    <string name="button3description">Button 3</string>
+    <string name="button4description">Button 4</string>
+    <string name="button5description">Button 5</string>
+    <string name="button6description">Button 6</string>
+    <string name="button7description">Button 7</string>
+    <string name="button8description">Button 8</string>
+    <string name="button9description">Button 9</string>
 
 </resources>
